@@ -2,27 +2,21 @@
 
 namespace App\Framework\Di;
 
-use App\Layers\Domain\Todo\DeleteTasksInterface;
-use App\Layers\Domain\Todo\GetTaskByIdInterface;
-use App\Layers\Domain\Todo\GetAllTasksInterface;
-use App\Layers\Domain\Todo\SaveNewTaskInterface;
-use App\Layers\Domain\Todo\UpdateTaskInterface;
-use App\Layers\Persistence\Action\Todo\DeleteTaskAction;
-use App\Layers\Persistence\Action\Todo\GetTaskByIdAction;
-use App\Layers\Persistence\Action\Todo\GetAllTasksAction;
-use App\Layers\Persistence\Action\Todo\SaveNewTaskAction;
-use App\Layers\Persistence\Action\Todo\UpdateTaskAction;
+use App\Layers\Domain\Todo\DeleteCityInterface;
+use App\Layers\Domain\Todo\SaveNewCityInterface;
+use App\Layers\Domain\Todo\GetAllCitiesInterface;
+use App\Layers\Persistence\Action\Todo\DeleteCityAction;
+use App\Layers\Persistence\Action\Todo\SaveNewCityAction;
+use App\Layers\Persistence\Action\Todo\GetAllCitiesAction;
 
 class Todo
 {
     public function __invoke(): array
     {
         return [
-            UpdateTaskInterface::class  => UpdateTaskAction::class,
-            DeleteTasksInterface::class => DeleteTaskAction::class,
-            SaveNewTaskInterface::class => SaveNewTaskAction::class,
-            GetAllTasksInterface::class => GetAllTasksAction::class,
-            GetTaskByIdInterface::class => GetTaskByIdAction::class,
+            DeleteCityInterface::class => DeleteCityAction::class,
+            SaveNewCityInterface::class => SaveNewCityAction::class,
+            GetAllCitiesInterface::class => GetAllCitiesAction::class,
         ];
     }
 }

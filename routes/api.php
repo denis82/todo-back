@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Layers\Presentation\Controllers\Todo\GetTaskController;
-use App\Layers\Presentation\Controllers\Todo\CreateTaskController;
-use App\Layers\Presentation\Controllers\Todo\UpdateTaskController;
-use App\Layers\Presentation\Controllers\Todo\DestroyTaskController;
-use App\Layers\Presentation\Controllers\Todo\GetListTasksController;
+use App\Layers\Presentation\Controllers\Todo\CreateCityController;
+use App\Layers\Presentation\Controllers\Todo\DestroyCityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +15,5 @@ use App\Layers\Presentation\Controllers\Todo\GetListTasksController;
 |
 */
 
-Route::get('/task/{id}', [GetTaskController::class, 'get'])->name('get.task');
-Route::get('/task', [GetListTasksController::class, 'get'])->name('getList.task');
-Route::post('/task', [CreateTaskController::class, 'create'])->name('create.task');
-Route::patch('/task/{id}', [UpdateTaskController::class, 'update'])->name('update.task');
-Route::delete('/task/{id}', [DestroyTaskController::class, 'destroy'])->name('destroy.task');
+Route::post('/city', [CreateCityController::class, 'create'])->name('create.city');
+Route::delete('/city/{id}', [DestroyCityController::class, 'destroy'])->name('destroy.city');
